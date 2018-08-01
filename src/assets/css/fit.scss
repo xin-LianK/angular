@@ -1,0 +1,94 @@
+// 1.@import "mixin";
+// 2.@include userem(720px);
+// 3.node-sass -w 1.scss 1.css --output-style expanded
+//移动端rem的实现
+@mixin userem($design-size) {
+  $device-size-list: $design-size, 1024px, 768px, 414px, 412px, 380px, 375px, 360px, 320px;
+  @each $size in $device-size-list {
+    @media screen and (max-width: #{$size}) {
+      html {
+        font-size: 100px*$size/$design-size;
+      }
+    }
+  }
+}
+
+//居中显示
+@mixin center {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin pos-tran {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+//垂直居中
+@mixin pos-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+//水平居中
+@mixin left-right {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+//平均分布
+@mixin flex-jus {
+  display: flex;
+  justify-content: space-around; // justify-content: space-between;
+}
+
+//画一个圆
+@mixin cube($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size:40px) {
+  @include cube($size);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  @content;
+}
+
+// 响应式的代码
+$m-size:1070px;
+@mixin onm {
+  @media screen and (max-width: $m-size) {
+    @content;
+  }
+}
+
+$s-size:736px;
+@mixin ons {
+  @media screen and (max-width: $s-size) {
+    @content;
+  }
+}
