@@ -3,7 +3,7 @@
 // 3.node-sass -w 1.scss 1.css --output-style expanded
 //移动端rem的实现
 @mixin userem($design-size) {
-  $device-size-list: $design-size, 1024px, 768px, 414px, 412px, 380px, 375px, 360px, 320px;
+  $device-size-list: $design-size, 1024px, 1080px, 768px, 414px, 412px, 380px, 375px, 360px, 320px;
   @each $size in $device-size-list {
     @media screen and (max-width: #{$size}) {
       html {
