@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CssStyleComponent } from './css-style.component';
 import { CssStyleRoutes } from './css-style.routing';
 import { FlexComponent } from './flex/flex.component';
+import { AutoComponent } from './auto/auto.component';
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   imports: [
@@ -11,7 +13,9 @@ import { FlexComponent } from './flex/flex.component';
   ],
   declarations: [
     CssStyleComponent,
-    FlexComponent
+    FlexComponent,
+    AutoComponent,
+    GridComponent
   ]
 })
 export class CssStyleModule { }
