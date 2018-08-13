@@ -1,3 +1,5 @@
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,14 +11,14 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
   ],
-  imports: [
-    BrowserModule,
+  imports:[
+ CommonModule,
+NgtUniversalModule,
+ 
+    
     AppRoutes,
     SharedModule.forRoot()
   ],
   providers: [],
-  bootstrap: [
-    AppComponent
-  ]
 })
 export class AppModule { }
