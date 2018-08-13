@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,15 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   private lang = 'zh';
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    private http: Http
+  ) {
     // 初始化配置
     this.initTranslateConfig();
+    this.http.get('api/user/functions')
+      .toPromise()
+      .then(res => console.log(res));
   }
   initTranslateConfig() {
     // 参数类型为数组，数组元素为本地语言json配置文件名

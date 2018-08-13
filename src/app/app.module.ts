@@ -21,6 +21,15 @@ function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+import { HttpInterceptorService } from './shared/services/http-interceptor.service';
+import { XHRBackend, RequestOptions, Http, HttpModule } from '@angular/http';
+
+export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions) {
+  const service = new HttpInterceptorService(xhrBackend, requestOptions);
+  return service;
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +39,8 @@ function createTranslateLoader(http: HttpClient) {
     CommonModule,
     NgtUniversalModule,
     AppRoutes,
-    HttpClientModule,
+    HttpClientModule, // HttpClient必须引用的模块
+    HttpModule,  // XHRBackend必须引用的模块
     SharedModule.forRoot(),
     // 调用forRoot静态方法指定加载的文件
     TranslateModule.forRoot({
@@ -47,7 +57,14 @@ function createTranslateLoader(http: HttpClient) {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService, // 自定义拦截器的类名
       multi: true, // Angular 这个 HTTP_INTERCEPTORS表示的是一个数组，而不是单个的值。
-    }
+    },
+    // 全局处理非正确的response
+    // HttpInterceptorService,
+    // {
+    //   provide: Http,
+    //   useFactory: interceptorFactory,
+    //   deps: [XHRBackend, RequestOptions]
+    // }
   ],
 })
 export class AppModule { }
