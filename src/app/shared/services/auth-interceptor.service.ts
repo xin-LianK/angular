@@ -20,11 +20,17 @@ export class AuthInterceptorService implements HttpInterceptor {
     const dupReq = req.clone();
     // Change the URL and replace 'http://' with 'https://'
     const secureReq = req.clone({ url: req.url.replace('http://', 'https://') });
+    // return next.handle(req);
 
-    const authReq = req.clone({ headers: req.headers.set('token', localStorage.getItem('token')) });
-
-    // const authReq = req.clone({ setHeaders: { Authorization: authHeader } });
-    return next.handle(req);
+    const login_type = window.sessionStorage.getItem('is_have_token');
+    if (login_type === 'token') {
+      const token = window.sessionStorage.getItem('management_access_token');
+      return next.handle(req.clone({
+        headers: req.headers.set('Authorization', `bearer ${token}`)
+      }));
+    } else {
+      return next.handle(req);
+    }
   }
 
 }
