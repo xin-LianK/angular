@@ -1,8 +1,9 @@
-:host{
+:host {
   padding: 5px;
-  display: grid;
-  grid-auto-rows: min-content;
+  display: grid; // grid-auto-rows: min-content;
+  -webkit-grid-auto-rows: min-content;
 }
+
 // Card base style
 * {
   box-sizing: border-box;
@@ -129,15 +130,15 @@ button {
 // mobile layout
 body {
   padding: 5px;
-  display: grid;
-  grid-auto-rows: min-content;
+  display: grid; // grid-auto-rows: min-content;
+  -webkit-grid-auto-rows: min-content;
 }
 
 .card {
   display: grid;
   grid-template-rows: repeat(3, min-content);
   grid-template-columns: 33% calc(67% - 55px) 55px;
-  grid-auto-rows: min-content;
+  -webkit-grid-auto-rows: min-content;
 }
 
 .grid-area_a {
