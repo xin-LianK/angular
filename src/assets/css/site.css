@@ -65,7 +65,7 @@ time,
 mark,
 audio,
 video,
-input {
+ {
   margin: 0;
   padding: 0;
   border: 0;
@@ -100,12 +100,12 @@ i {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
 }
 
-input[type='text'],
+/* input[type='text'],
 textarea,
 fieldset {
   border: 0;
   outline: 0
-}
+} */
 
 textarea {
   overflow: auto;
