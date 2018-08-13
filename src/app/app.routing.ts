@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  // 这种模式属于路由懒加载
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule'
