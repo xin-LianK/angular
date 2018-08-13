@@ -11,11 +11,9 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
   ],
-  imports:[
- CommonModule,
-NgtUniversalModule,
- 
-    
+  imports: [
+    CommonModule,
+    NgtUniversalModule,
     AppRoutes,
     SharedModule.forRoot()
   ],
