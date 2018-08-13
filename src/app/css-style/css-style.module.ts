@@ -5,6 +5,7 @@ import { CssStyleRoutes } from './css-style.routing';
 import { FlexComponent } from './flex/flex.component';
 import { AutoComponent } from './auto/auto.component';
 import { GridComponent } from './grid/grid.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { GridComponent } from './grid/grid.component';
     CssStyleComponent,
     FlexComponent,
     AutoComponent,
-    GridComponent
+    GridComponent,
+    ChatComponent
   ]
 })
 export class CssStyleModule { }
