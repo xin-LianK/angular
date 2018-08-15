@@ -23,6 +23,7 @@ function createTranslateLoader(http: HttpClient) {
 
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
 import { XHRBackend, RequestOptions, Http, HttpModule } from '@angular/http';
+import { Router, NavigationEnd } from '@angular/router';
 
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions) {
   const service = new HttpInterceptorService(xhrBackend, requestOptions);
@@ -67,4 +68,12 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     // }
   ],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    router.events.subscribe(re => {
+      if (re instanceof NavigationEnd) {
+        console.log(1);
+      }
+    });
+  }
+}
