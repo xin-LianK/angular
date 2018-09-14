@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
+  package = new Object();
   constructor() { }
 
   ngOnInit() {
@@ -16,5 +16,13 @@ export class IndexComponent implements OnInit {
     ctx.arc(95, 50, 40, 0, 2 * Math.PI);
     ctx.stroke();
   }
-
+  wechatPay() {
+    WeixinJSBridge.invoke('getBrandWCPayRequest', this.package, (arg) => {
+      // alert(JSON.stringify(arg));
+      const arg_str = JSON.stringify(arg);
+      if (arg_str.includes('get_brand_wcpay_request:ok')) {
+      } else if (arg_str.includes('get_brand_wcpay_request:cancel')) {
+      }
+    });
+  }
 }
