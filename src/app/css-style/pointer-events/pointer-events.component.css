@@ -1,0 +1,53 @@
+/* 神奇的css属性，竟然看不懂 */
+.card{
+  max-width: 286px;
+}
+.change-parent-style {
+  pointer-events: none;
+  transition: border-color 0.15s ease-in-out;
+}
+.change-parent-style:hover {
+  border-color: #0069d9;
+}
+
+.btn {
+  pointer-events: auto;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.change-element-style {
+  pointer-events: none;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.change-element-style:hover .element {
+  color: #28a745;
+}
+
+
+
+
+.btn-x {
+  pointer-events: none;
+  font-weight: 700;
+  border: none;
+  background-color: #e8e8e8;
+  border-radius: .2rem;
+  padding: .5em .8em;
+  cursor: pointer;
+}
+.btn-x::after {
+  content: '×';
+  color: #dc3545;
+  pointer-events: auto;
+}
+
+.svg {
+  pointer-events: visiblePainted;
+  transition: fill .15s ease-in-out;
+}
+.svg:hover {
+  fill: #fd7e14;
+}

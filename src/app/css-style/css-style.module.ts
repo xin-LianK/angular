@@ -6,6 +6,7 @@ import { FlexComponent } from './flex/flex.component';
 import { AutoComponent } from './auto/auto.component';
 import { GridComponent } from './grid/grid.component';
 import { ChatComponent } from './chat/chat.component';
+import { PointerEventsComponent } from './pointer-events/pointer-events.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ChatComponent } from './chat/chat.component';
     FlexComponent,
     AutoComponent,
     GridComponent,
-    ChatComponent
+    ChatComponent,
+    PointerEventsComponent
   ]
 })
 export class CssStyleModule { }

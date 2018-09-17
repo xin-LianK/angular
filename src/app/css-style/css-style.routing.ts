@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FlexComponent } from './flex/flex.component';
 import { AutoComponent } from './auto/auto.component';
 import { GridComponent } from './grid/grid.component';
+import { PointerEventsComponent } from './pointer-events/pointer-events.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'grid',
     component: GridComponent
+  },
+  {
+    path: 'point',
+    component: PointerEventsComponent
   },
   {
     path: '',
