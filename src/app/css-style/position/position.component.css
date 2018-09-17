@@ -1,0 +1,163 @@
+#sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  background: #f83d23;
+  width: 100px;
+  height: 100px;
+  top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 6px #000;
+  color: #fff;
+}
+
+.extra,
+#wrapper {
+  width: 75%;
+  margin: auto;
+  background-color: #ccc;
+}
+
+#wrapper {
+  height: 800px;
+}
+
+.extra {
+  height: 100px;
+}
+
+h4 {
+  text-align: center;
+}
+
+@media (min-height: 768px) {
+  #wrapper {
+    height: 2000px;
+  }
+}
+
+
+
+/* Second */
+article {
+  background-image: linear-gradient(to bottom,
+    transparent 50px,
+    #fdef67 50px,
+    #fdef67 calc(100% - 50px),
+    transparent 0);
+  margin: auto auto 50px auto;
+}
+
+.category,
+.title,
+.footer {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 50px;
+}
+
+.category {
+  top: 0;
+  font: 41px/57px "Titan One";
+  color: #f83d23;
+  text-shadow: 5px 5px 0 dodgerblue;
+}
+
+.title {
+  top: 0;
+  font: 50px/60px "Crimson Text";
+  color: #fdef67;
+  text-shadow: 2px 2px 0 #f83d23;
+  background-color: dodgerblue;
+  margin: 0;
+}
+
+.footer {
+  bottom: 100px;
+  z-index: -1;
+  color: white;
+  text-shadow: 1px 1px black;
+  background-color: #f83d23;
+  width: 80%;
+  margin: 50px auto auto auto;
+}
+
+body {
+  font-family: "Crimson Text";
+}
+
+p {
+  margin: 10px;
+}
+
+.emptyBlocks {
+  background-color: #ccc;
+  height: 200px;
+  margin: 40px auto;
+}
+
+article,
+.emptyBlocks {
+  width: 80vw;
+  max-width: 420px;
+}
+
+@media (max-width: 420px) {
+  .category {
+    font: 24px/72px "Titan One";
+    text-align: center;
+  }
+
+  .footer {
+    font-size: 9pt;
+  }
+}
+
+@media (max-height: 946px) {
+  .tallScreenText {
+    display: none;
+  }
+}
+
+
+/* Three */
+footer {
+  position: sticky;
+  position: -webkit-sticky;
+  bottom: 0;
+  z-index: -1;
+  height: 50px;
+  background-color: dodgerblue;
+  color: white;
+  text-shadow: 2px 2px black;
+  padding: 5px 0;
+  text-align: center;
+}
+
+body {
+  background-image: linear-gradient(to top, transparent 60px, #fff 60px, #fff 0);
+  font: 14pt 'Crimson Text';
+  margin: 0;
+}
+
+html {
+  background-color: #fff;
+}
+
+main {
+  padding: 0px;
+  width: 75vw;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  color: dodgerblue;
+}
+
+@media (max-width: 420px) {
+  footer {
+    font-size: 9pt;
+  }
+}

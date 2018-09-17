@@ -3,6 +3,7 @@ import { FlexComponent } from './flex/flex.component';
 import { AutoComponent } from './auto/auto.component';
 import { GridComponent } from './grid/grid.component';
 import { PointerEventsComponent } from './pointer-events/pointer-events.component';
+import { PositionComponent } from './position/position.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'point',
     component: PointerEventsComponent
+  },
+  {
+    path: 'position',
+    component: PositionComponent
   },
   {
     path: '',

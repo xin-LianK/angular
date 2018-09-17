@@ -7,6 +7,7 @@ import { AutoComponent } from './auto/auto.component';
 import { GridComponent } from './grid/grid.component';
 import { ChatComponent } from './chat/chat.component';
 import { PointerEventsComponent } from './pointer-events/pointer-events.component';
+import { PositionComponent } from './position/position.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { PointerEventsComponent } from './pointer-events/pointer-events.componen
     AutoComponent,
     GridComponent,
     ChatComponent,
-    PointerEventsComponent
+    PointerEventsComponent,
+    PositionComponent
   ]
 })
 export class CssStyleModule { }
