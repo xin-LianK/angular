@@ -109,3 +109,30 @@ interface paymentPackage {
 interface callArg {
   err_msg?: string;
 }
+
+// 百度地图
+declare namespace BMap {
+  class Geolocation {
+    constructor();
+    getCurrentPosition(callback: (r: GeolocationResult) => any);
+    getStatus();
+  }
+}
+interface GeolocationResult {
+  point: Point;//	定位坐标点
+  accuracy: number;//	定位精度，单位为米
+  address: AddressComponent;//	根据定位坐标点解析出的地址信息，可能为空（3.0新增）
+}
+interface Point {
+  lng: number;//	地理经度
+  lat: number;//	地理纬度
+}
+
+
+interface AddressComponent {
+  streetNumber: string;//	门牌号码
+  street: string;//	街道名称
+  district: string;//	区县名称
+  city: string;//	城市名称
+  province: string;//	省份名称
+}
