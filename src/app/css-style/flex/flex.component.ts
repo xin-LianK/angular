@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-flex',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlexComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private title: Title
+  ) {
+    this.route.data.subscribe(t => title.setTitle(t['title']));
+
+  }
 
   ngOnInit() {
   }
