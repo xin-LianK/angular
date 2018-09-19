@@ -8,7 +8,8 @@ import { PositionComponent } from './position/position.component';
 const routes: Routes = [
   {
     path: 'flex',
-    component: FlexComponent
+    component: FlexComponent,
+    data: { title: 'Css' }
   },
   {
     path: 'auto',

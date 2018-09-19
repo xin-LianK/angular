@@ -5,13 +5,8 @@ const routes: Routes = [
   {
     path: 'index',
     component: IndexComponent,
-    data: { title: 'Home' }
+    data: { title: 'Html5' }
   },
-  {
-    path: '',
-    redirectTo: 'index',
-    pathMatch: 'full'
-  }
 ];
 
-export const HomeRoutes = RouterModule.forChild(routes);
+export const HtmlFiveRoutes = RouterModule.forChild(routes);

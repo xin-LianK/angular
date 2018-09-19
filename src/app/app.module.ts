@@ -72,7 +72,6 @@ export class AppModule {
   constructor(router: Router) {
     router.events.subscribe(re => {
       if (re instanceof NavigationEnd) {
-        console.log(1);
       }
     });
   }

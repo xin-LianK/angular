@@ -17,9 +17,9 @@ export class AppComponent {
   ) {
     // 初始化配置
     this.initTranslateConfig();
-    this.http.get('api/user/functions')
-      .toPromise()
-      .then(res => console.log(res));
+    // this.http.get('api/user/functions')
+    //   .toPromise()
+    //   .then(res => console.log(res));
   }
   initTranslateConfig() {
     // 参数类型为数组，数组元素为本地语言json配置文件名
