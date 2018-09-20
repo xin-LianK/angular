@@ -4,6 +4,7 @@ import { ModuleWithProviders } from '../../../node_modules/@angular/compiler/src
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { CanDeactivateGuardService } from './services/can-deactivate-guard.service';
+import { RouteResolverService } from './services/route-resolver.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { CanDeactivateGuardService } from './services/can-deactivate-guard.servi
   providers: [
     AuthService,
     AuthGuardService,
-    CanDeactivateGuardService
+    CanDeactivateGuardService,
+    RouteResolverService
   ]
 })
 export class SharedModule {
