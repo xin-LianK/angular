@@ -23,6 +23,11 @@ const routes: Routes = [
     loadChildren: './gps/gps.module#GpsModule'
   },
   {
+    path: 'crisis-center',
+    loadChildren: './crisis-center/crisis-center.module#CrisisCenterModule',
+    data: { preload: true }
+  },
+  {
     path: 'form',
     loadChildren: './form-test/form-test.module#FormTestModule'
   },
