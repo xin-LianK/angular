@@ -19,9 +19,9 @@ const routes: Routes = [
             path: ':id',
             component: CrisisDetailComponent,
             canDeactivate: [CanDeactivateGuardService],
-            resolve: {
-              crisis: RouteResolverService
-            }
+            // resolve: {
+            //   crisis: RouteResolverService
+            // }
           },
           {
             path: '',
