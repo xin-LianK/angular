@@ -29,7 +29,10 @@
           <a class="nav-link">GPS</a>
         </li>
         <li class="nav-item" routerLink="/crisis-center" routerLinkActive="active">
-          <a class="nav-link disabled">crisis-center</a>
+          <a class="nav-link">crisis-center</a>
+        </li>
+        <li class="nav-item" [routerLink]="[{ outlets: { popup: ['compose'] } }]">
+          <a class="nav-link">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disable</a>

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ import { XHRBackend, RequestOptions, Http, HttpModule } from '@angular/http';
 import { Router, NavigationEnd } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions) {
   const service = new HttpInterceptorService(xhrBackend, requestOptions);
@@ -43,11 +44,22 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     CommonModule,
     NgtUniversalModule,
     AppRoutes,
-    HttpClientModule,
+    HttpClientModule, // HttpClient必须引用的模块
+    HttpModule,  // XHRBackend必须引用的模块
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     // HttpClient必须引用的模块\r\nHttpModule,
     // XHRBackend必须引用的模块\r\nBrowserAnimationsModule,
     SharedModule.forRoot(),
+    // 调用forRoot静态方法指定加载的文件
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     // 调用forRoot静态方法指定加载的文件\r\nTranslateModule.forRoot(\r\nloader
   ],
   providers: [

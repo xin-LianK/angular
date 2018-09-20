@@ -30,7 +30,8 @@ const routes: Routes = [
   },
   {
     path: 'compose',
-    component: ComposeMessageComponent
+    component: ComposeMessageComponent,
+    outlet: 'popup'
   },
   {
     path: 'form',
