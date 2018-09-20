@@ -11,13 +11,12 @@ export class RouterGuardService implements CanActivate, CanActivateChild {
     private router: Router
   ) { }
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-    const url = window.location.href;
-    return this.checkLogin(url);
+    return this.checkLogin();
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
     return this.canActivateChild(route, state);
   }
-  checkLogin(url: string): boolean {
+  checkLogin(): boolean {
     if (window.sessionStorage.getItem('is_have_token')) {
       return true;
     }
