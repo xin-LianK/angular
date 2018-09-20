@@ -5,9 +5,14 @@
   <li class="nav-item" routerLink="/gps/one" routerLinkActive="active">
     <a class="nav-link">Route-one</a>
   </li>
+
   <li class="nav-item" routerLink="/gps/two/1" routerLinkActive="active">
-    <a class="nav-link">Route-two</a>
+    <a class="nav-link">Route-two-first</a>
   </li>
+  <li class="nav-item" [routerLink]="['/gps/two',1]" routerLinkActive="active">
+    <a class="nav-link">Route-two-secont</a>
+  </li>
+
   <li class="nav-item" routerLink="/gps/three" (click)=" goToPage()" routerLinkActive="active">
     <a class="nav-link">Route-three</a>
   </li>

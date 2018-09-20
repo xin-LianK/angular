@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ThreeComponent implements OnInit {
 
+  id: string;
   constructor(
     private title: Title,
     private route: ActivatedRoute
@@ -24,7 +25,6 @@ export class ThreeComponent implements OnInit {
     this.route.data.subscribe(r => {
       console.log(r);
     });
-    // 路由参数获取目前用这个，以前的即将废弃
     this.route.paramMap.subscribe(r => {
       console.log(r);
     });
@@ -39,6 +39,7 @@ export class ThreeComponent implements OnInit {
     console.log(this.route.parent);
     console.log(this.route.firstChild);
     console.log(this.route.children);
+
   }
 
 }
