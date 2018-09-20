@@ -24,14 +24,14 @@ const routes: Routes = [
           path: 'index',
           component: IndexComponent
         },
-        {
-          path: 'login',
-          component: LoginComponent
-        },
       ]
     }]
 
-  }
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
 
 ];
 
