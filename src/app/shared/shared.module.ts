@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ModuleWithProviders } from '../../../node_modules/@angular/compiler/src/core';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { CanDeactivateGuardService } from './services/can-deactivate-guard.service';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { AuthGuardService } from './services/auth-guard.service';
   providers: [
     AuthService,
     AuthGuardService,
+    CanDeactivateGuardService
   ]
 })
 export class SharedModule {

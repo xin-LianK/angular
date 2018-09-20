@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-crisis-detail',
@@ -7,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./crisis-detail.component.css']
 })
 export class CrisisDetailComponent implements OnInit {
-
+  editName: string;
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -15,6 +16,7 @@ export class CrisisDetailComponent implements OnInit {
 
   ngOnInit() {
   }
+
   returnIndex() {
     this.router.navigate(['../', { id: 1, foo: 'foo' }], { relativeTo: this.route });
   }

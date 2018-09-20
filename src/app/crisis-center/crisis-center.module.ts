@@ -5,11 +5,14 @@ import { CrisisCenterRoutes } from './crisis-center.routing';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
 import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    CrisisCenterRoutes
+    CrisisCenterRoutes,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     CrisisCenterComponent,
