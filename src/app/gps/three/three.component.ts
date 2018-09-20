@@ -24,6 +24,7 @@ export class ThreeComponent implements OnInit {
     this.route.data.subscribe(r => {
       console.log(r);
     });
+    // 路由参数获取目前用这个，以前的即将废弃
     this.route.paramMap.subscribe(r => {
       console.log(r);
     });
