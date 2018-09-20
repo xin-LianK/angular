@@ -12,7 +12,6 @@ import { AppRoutes } from './app.routing';
 import { SharedModule } from './shared/shared.module';
 
 // import { RouterModule,PreloadAllModules  } from '@angular/router';
-import { AccountComponent } from './account/account.component';
 import { TipService } from './shared/services/tip.service';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 
@@ -37,7 +36,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
 @NgModule({
   declarations: [
     AppComponent,
-    AccountComponent,
     ComposeMessageComponent
   ],
   imports: [

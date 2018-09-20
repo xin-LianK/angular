@@ -4,6 +4,7 @@ import { AccountComponent } from './account.component';
 import { AccountRoutes } from './account.routing';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
+import { MangementComponent } from './mangement/mangement.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { IndexComponent } from './index/index.component';
   declarations: [
     AccountComponent,
     LoginComponent,
-    IndexComponent
+    IndexComponent,
+    MangementComponent
   ]
 })
 export class AccountModule { }
