@@ -28,8 +28,11 @@
         <li class="nav-item" routerLink="/gps" routerLinkActive="active">
           <a class="nav-link">GPS</a>
         </li>
+        <li class="nav-item" routerLink="/crisis-center" routerLinkActive="active">
+          <a class="nav-link disabled">crisis-center</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link disabled">Disable</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -42,4 +45,5 @@
 
 <div class="container">
   <router-outlet></router-outlet>
+  <router-outlet name="popup"></router-outlet>
 </div>

@@ -1,4 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 
 const routes: Routes = [
   // 这种模式属于路由懒加载
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: 'crisis-center',
     loadChildren: './crisis-center/crisis-center.module#CrisisCenterModule',
     data: { preload: true }
+  },
+  {
+    path: 'compose',
+    component: ComposeMessageComponent
   },
   {
     path: 'form',
