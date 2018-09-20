@@ -10,7 +10,7 @@ import { ThreeComponent } from './three/three.component';
 @NgModule({
   imports: [
     CommonModule,
-    GpsRoutes
+    GpsRoutes,
   ],
   declarations: [
     GpsComponent,

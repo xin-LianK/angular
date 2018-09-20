@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-
+import { RouteChangeAnimation } from '../../shared/animations/route-animation';
 @Component({
   selector: 'app-two',
   templateUrl: './two.component.html',
-  styleUrls: ['./two.component.css']
+  styleUrls: ['./two.component.css'],
+  animations: [RouteChangeAnimation]
 })
 export class TwoComponent implements OnInit {
   id: number;
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display') display = 'block';
+  // @HostBinding('style.position') position = 'absolute';
+
   constructor(
     private title: Title,
     private route: ActivatedRoute,
