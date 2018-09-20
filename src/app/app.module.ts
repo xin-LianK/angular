@@ -24,6 +24,7 @@ function createTranslateLoader(http: HttpClient) {
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
 import { XHRBackend, RequestOptions, Http, HttpModule } from '@angular/http';
 import { Router, NavigationEnd } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions) {
   const service = new HttpInterceptorService(xhrBackend, requestOptions);
@@ -42,6 +43,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AppRoutes,
     HttpClientModule, // HttpClient必须引用的模块
     HttpModule,  // XHRBackend必须引用的模块
+    BrowserAnimationsModule,
     SharedModule.forRoot(),
     // 调用forRoot静态方法指定加载的文件
     TranslateModule.forRoot({
