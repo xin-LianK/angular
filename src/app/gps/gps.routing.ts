@@ -4,11 +4,14 @@ import { GpsComponent } from './gps.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
 import { ThreeComponent } from './three/three.component';
+import { AuthGuardService } from 'src/app/shared/services/auth-guard.service';
 
 const routes: Routes = [
   {
     path: '',
     component: GpsComponent,
+    canActivate: [AuthGuardService],
+    canActivateChild: [AuthGuardService],
     children: [
       {
         path: 'index',
