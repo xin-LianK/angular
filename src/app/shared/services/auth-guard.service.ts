@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild } from '@angular/router';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild, NavigationExtras } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -20,7 +20,18 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
   checkLogin(url: string): boolean {
     if (this.authService.isLoggedIn) { return true; }
     this.authService.redirectUrl = url;
-    this.router.navigate(['/account/login']);
+
+    // Create a dummy session id
+    const sessionId = 123456789;
+
+    // Set our navigation extras object
+    // that contains our global query params and fragment
+    const navigationExtras: NavigationExtras = {
+      queryParams: { 'session_id': sessionId },
+      fragment: 'anchor'
+    };
+
+    this.router.navigate(['/account/login', navigationExtras]);
     return false;
   }
 }
