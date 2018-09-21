@@ -15,11 +15,6 @@ import { SharedModule } from './shared/shared.module';
 import { TipService } from './shared/services/tip.service';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 
-// 使用TranslateHttpLoader加载项目的本地语言json配置文件
-function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
 import { XHRBackend, RequestOptions, Http, HttpModule } from '@angular/http';
 import { Router, NavigationEnd } from '@angular/router';
@@ -31,7 +26,10 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
   const service = new HttpInterceptorService(xhrBackend, requestOptions);
   return service;
 }
-
+// 使用TranslateHttpLoader加载项目的本地语言json配置文件
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [

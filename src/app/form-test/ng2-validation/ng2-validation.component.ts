@@ -24,7 +24,7 @@ export class Ng2ValidationComponent implements OnInit {
       sex: new FormControl('', Validators.required),
       position: new FormControl('', CustomValidators.range([2, 20])),
       habby: new FormControl('', CustomValidators.range([2, 50])),
-      phone: new FormControl('', CustomValidators.phone("zh-CN")),
+      phone: new FormControl('', CustomValidators.phone('zh-CN')),
       email: new FormControl('', CustomValidators.email),
       url: new FormControl('', CustomValidators.url)
     });
