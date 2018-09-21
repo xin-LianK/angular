@@ -5,6 +5,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { CanDeactivateGuardService } from './services/can-deactivate-guard.service';
 import { RouteResolverService } from './services/route-resolver.service';
+import { SelectivePreloadingStrategyService } from './services/selective-preloading-strategy.service';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { RouteResolverService } from './services/route-resolver.service';
     AuthService,
     AuthGuardService,
     CanDeactivateGuardService,
-    RouteResolverService
+    RouteResolverService,
+    SelectivePreloadingStrategyService
   ]
 })
 export class SharedModule {

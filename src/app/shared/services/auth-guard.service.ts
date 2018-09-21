@@ -1,24 +1,42 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild, NavigationExtras } from '@angular/router';
+import {
+  CanActivate,
+  Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  CanActivateChild,
+  NavigationExtras,
+  CanLoad,
+  Route
+} from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate, CanActivateChild {
-
+export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad {
   constructor(private authService: AuthService, private router: Router) { }
-  //                 即将被激活的路由               该应用即将到达的状态
+
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const url: string = state.url;
 
     return this.checkLogin(url);
   }
+
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     return this.canActivate(route, state);
   }
+
+  canLoad(route: Route): boolean {
+    const url = `/${route.path}`;
+
+    return this.checkLogin(url);
+  }
+
   checkLogin(url: string): boolean {
     if (this.authService.isLoggedIn) { return true; }
+
+    // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
 
     // Create a dummy session id
@@ -31,7 +49,8 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
       fragment: 'anchor'
     };
 
-    this.router.navigate(['/account/login', navigationExtras]);
+    // Navigate to the login page with extras
+    this.router.navigate(['/account/login'], navigationExtras);
     return false;
   }
 }
